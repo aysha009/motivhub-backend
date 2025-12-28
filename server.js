@@ -6,6 +6,7 @@ const cors = require('cors')
 const AuthRouter = require('./routes/AuthRouter')
 const PostRouter = require('./routes/PostRouter')
 const ChannelRouter = require('./routes/ChannelRouter')
+const CommentRouter = require('./routes/CommentRouter')
 
 const db = require('./db')
 
@@ -22,6 +23,8 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/auth', AuthRouter)
 app.use('/posts', PostRouter)
+app.use('/channels', ChannelRouter)
+app.use('/comments', CommentRouter)
 
 
 app.get('/', (req, res) => {
